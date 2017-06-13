@@ -1,4 +1,5 @@
 /node_modules
+/public/assets
 /public/hot
 /public/storage
 /storage/*.key
@@ -9,4 +10,3 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
-/public/assets/theme/neon/*

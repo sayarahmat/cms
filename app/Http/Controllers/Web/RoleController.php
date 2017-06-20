@@ -40,4 +40,42 @@ class RoleController extends Controller
             dd("gagal simpan role");
         }
     }
+
+    public function edit($id)
+    {
+        $role = Role::find($id);
+        return view('role.edit')->withRole($role);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $role = Role::find($id);
+        $this->validate($request, array(
+            'name' => 'required'
+        ));
+
+        if(Role::where('name','=',Input::get('name'))->count() > 0 ){
+            dd("role name exist");
+        }else{
+            $role->name = $request->name;
+            $role->display_name = $request->display_name;
+            $role->description = $request->description;
+
+            if($role->save()){
+                dd("berhasil update role");
+            }
+            dd("gagal update role");
+        }
+    }
+
+    public function delete($id)
+    {
+        // $role = Role::findOrFail($id);
+        $role = Role::whereId($id)->delete();
+        if($role)
+        {
+            return redirect('role');
+        }
+        dd('dd');
+    }
 }

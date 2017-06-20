@@ -33,7 +33,9 @@ Route::group(['prefix' => 'role', 'namespace' => 'Web'], function () {
 		Route::get('/', ['as' => 'Role.index', 'uses' => 'RoleController@index']);
 		Route::get('/create', ['as' => 'Role.create', 'uses' => 'RoleController@create']);
         Route::post('/',['as' => 'Role.store', 'uses' => 'RoleController@store']);
-        Route::get('/edit/{id}',['as' => 'Role.edit', 'uses' => 'RoleController@edit']);
+        Route::get('/{id}/edit',['as' => 'Role.edit', 'uses' => 'RoleController@edit']);
+        Route::put('/{id}',['as' => 'Role.update', 'uses' => 'RoleController@update']);
+        Route::delete('/{id}',['as' => 'Role.delete', 'uses' => 'RoleController@delete']);
 	});
 });
 

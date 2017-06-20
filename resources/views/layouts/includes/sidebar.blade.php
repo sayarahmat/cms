@@ -20,27 +20,27 @@
 				
 				<ul>
 					<li>
-						<a href="user">
+						<a href="/user">
 							<span>User</span>
 						</a>
 					</li>
 					<li>
-						<a href="role">
+						<a href="/role">
 							<span>Role</span>
 						</a>
 					</li>
 					<li>
-						<a href="permission">
+						<a href="/permission">
 							<span>Permission</span>
 						</a>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<a href="/event">
+				{{-- <a href="/event">
 					<i class="entypo-window"></i>
 					<span>Event</span>
-				</a>
+				</a> --}}
 				<!--
 				<ul>
 					<li>

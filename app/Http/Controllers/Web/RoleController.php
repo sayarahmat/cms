@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
+use App\Models\Permission;
 use Illuminate\Support\Facades\Input;
 
 class RoleController extends Controller
@@ -17,7 +18,8 @@ class RoleController extends Controller
 
     public function create()
     {
-        return view('role.create');
+        $permission = Permission::all();
+        return view('role.create')->withPermission($permission);
     }
 
     public function store(Request $request)
@@ -35,7 +37,12 @@ class RoleController extends Controller
             $role->description = $request->description;
 
             if($role->save()){
-                dd("berhasil simpan role");
+                if($role->perms()->sync($request->permission, false))
+                {
+                    return redirect('role');
+                    //dd("berhasil simpan role");
+                }
+                dd("gagal simpan role permission");
             }
             dd("gagal simpan role");
         }
@@ -74,6 +81,7 @@ class RoleController extends Controller
         $role = Role::whereId($id)->delete();
         if($role)
         {
+            //$role->perms()->detach();
             return redirect('role');
         }
         dd('dd');

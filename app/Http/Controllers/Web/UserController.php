@@ -55,7 +55,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $userRole = '';
-        foreach ($user as $role) {
+        foreach ($user->roles as $role) {
             $userRole = $role->id;
         }
         $roles = Role::all();
@@ -69,25 +69,22 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $this->validate($request, array(
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users,email,'.$user->email,
-            'password' => 'required|confirmed|min:6'
+            'name' => 'required|max:255'
         ));
-        
         $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->password);
-        //revoke role terlebih dahulu baru save kembali
-        // foreach($user->roles as $role)
-        // {
-        //     $user->revokeRole($role->name);
-        // }
-        // if($user->save())
-        // {
-        //     $user->assignRole($request->role);
-        //     return redirect('user');
-        // }
-        // return "gagal";
+        foreach($user->roles as $role)
+        {
+            $user->detachRole($role->id);
+        }
+        if($user->save())
+        {
+            if($user->attachRole($request->role))
+            {
+                return redirect('user');
+            }
+            return redirect('user');
+        }
+        return "gagal";
     }
 
     public function delete($id)

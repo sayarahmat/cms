@@ -11,7 +11,25 @@
 				</form>
 			</li>
 			
-		
+			<li>
+				<a href="/">
+					<i class="entypo-user"></i>
+					<span>Manajemen Domain</span>
+				</a>
+				
+				<ul>
+					<li>
+						<a href="/">
+							<span>List User</span>
+						</a>
+					</li>
+					<li>
+						<a href="/">
+							<span>Register User</span>
+						</a>
+					</li>
+				</ul>
+			</li>
 			<li>
 				<a href="/user">
 					<i class="entypo-user"></i>
@@ -36,27 +54,4 @@
 					</li>
 				</ul>
 			</li>
-			<li>
-				{{-- <a href="/event">
-					<i class="entypo-window"></i>
-					<span>Event</span>
-				</a> --}}
-				<!--
-				<ul>
-					<li>
-						<a href="/event/published">
-							<span>Published</span>
-						</a>
-					</li>
-					<li>
-						<a href="/event/unpublished">
-							<span>Unpublished</span>
-						</a>
-					</li>
-				</ul>-->
-			</li>
-			
-			
-
-			
 		</ul>

@@ -37,6 +37,12 @@
 				</ul>
 			</li>
 			<li>
+				<a href="/post">
+					<i class="entypo-book"></i>
+					<span>Post</span>
+				</a>
+			</li>
+			<li>
 				{{-- <a href="/event">
 					<i class="entypo-window"></i>
 					<span>Event</span>

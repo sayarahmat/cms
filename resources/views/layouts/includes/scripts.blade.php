@@ -21,3 +21,7 @@
 	<script src="/assets/theme/neon/assets/js/select2/select2.min.js"></script>
 	
 	<script src="/assets/theme/neon/assets/js/neon-custom.js"></script>
+
+	<script src="/assets/theme/neon/assets/js/neon-mail.js"></script>
+	<script src="/assets/theme/neon/assets/js/neon-chat.js"></script>
+	<script src="/assets/theme/neon/assets/js/neon-demo.js"></script>

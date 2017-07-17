@@ -17,4 +17,5 @@
 	<link rel="stylesheet" href="/assets/theme/neon/assets/css/neon-forms.css">
 	<link rel="stylesheet" href="/assets/theme/neon/assets/css/custom.css">
 	
-	<script src="/assets/theme/neon/assets/js/jquery-1.11.0.min.js"></script>	
+	<script src="/assets/theme/neon/assets/js/jquery-1.11.0.min.js"></script>
+	

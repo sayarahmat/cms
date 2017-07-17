@@ -49,3 +49,13 @@ Route::group(['prefix' => 'permission', 'namespace' => 'Web'], function () {
         Route::get('/edit/{id}',['as' => 'Permission.edit', 'uses' => 'PermissionController@edit']);
 	});
 });
+
+//routing post
+Route::group(['prefix' => 'post', 'namespace' => 'Web'], function () {
+
+	Route::group([], function(){
+		Route::get('/', ['as' => 'Post.index', 'uses' => 'PostController@index']);
+		Route::get('/create', ['as' => 'Post.create', 'uses' => 'PostController@createPost']);
+        Route::post('/',['as' => 'Post.store', 'uses' => 'PostController@storePost']);
+	});
+});

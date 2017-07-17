@@ -22,7 +22,9 @@ Route::group(['prefix' => 'user', 'namespace' => 'Web'], function () {
 		Route::get('/', ['as' => 'User.index', 'uses' => 'UserController@index']);
 		Route::get('/create', ['as' => 'User.create', 'uses' => 'UserController@create']);
         Route::post('/',['as' => 'User.store', 'uses' => 'UserController@store']);
-        Route::get('/edit/{id}',['as' => 'User.edit', 'uses' => 'UserController@edit']);
+        Route::get('/{id}/edit',['as' => 'User.edit', 'uses' => 'UserController@edit']);
+        Route::put('/{id}',['as' => 'User.update', 'uses' => 'UserController@update']);
+        Route::delete('/{id}',['as' => 'User.delete', 'uses' => 'UserController@delete']);
 	});
 });
 
@@ -46,7 +48,9 @@ Route::group(['prefix' => 'permission', 'namespace' => 'Web'], function () {
 		Route::get('/', ['as' => 'Permission.index', 'uses' => 'PermissionController@index']);
 		Route::get('/create', ['as' => 'Permission.create', 'uses' => 'PermissionController@create']);
         Route::post('/',['as' => 'Permission.store', 'uses' => 'PermissionController@store']);
-        Route::get('/edit/{id}',['as' => 'Permission.edit', 'uses' => 'PermissionController@edit']);
+        Route::get('/{id}/edit',['as' => 'Permission.edit', 'uses' => 'PermissionController@edit']);
+        Route::put('/{id}',['as' => 'Permission.update', 'uses' => 'PermissionController@update']);
+        Route::delete('/{id}',['as' => 'Permission.delete', 'uses' => 'PermissionController@delete']);
 	});
 });
 

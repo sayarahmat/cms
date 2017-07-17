@@ -8,7 +8,7 @@
 		
 			<div class="panel-heading">
 				<div class="panel-title">
-					Add Role
+					Add Permission
 				</div>
 				
 
@@ -16,11 +16,11 @@
 			
 			<div class="panel-body">
 				
-				<form role="form" class="form-horizontal form-groups-bordered" method="POST" action="{{ url('/role') }}">
+				<form role="form" class="form-horizontal form-groups-bordered" method="POST" action="{{ url('/permission') }}">
 					{{ csrf_field() }}
 					
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-						<label for="name" class="col-sm-3 control-label">Role Name</label>
+						<label for="name" class="col-sm-3 control-label">Permission Name</label>
 						
 						<div class="col-sm-5">
 							<input type="text" class="form-control" id="name" name="name" placeholder="Placeholder">
@@ -34,7 +34,7 @@
 					</div>
 
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-						<label for="display_name" class="col-sm-3 control-label">Role Display Name</label>
+						<label for="display_name" class="col-sm-3 control-label">Permission Display Name</label>
 						
 						<div class="col-sm-5">
 							<input type="text" class="form-control" id="display_name" name="display_name" placeholder="Placeholder">
@@ -48,7 +48,7 @@
 					</div>
 
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-						<label for="description" class="col-sm-3 control-label">Role Description</label>
+						<label for="description" class="col-sm-3 control-label">Permission Description</label>
 						
 						<div class="col-sm-5">
 							<input type="text" class="form-control" id="description" name="description" placeholder="Placeholder">
@@ -58,22 +58,6 @@
                                     <strong>{{ $errors->first('description') }}</strong>
                                 </span>
                             @endif
-						</div>
-					</div>
-
-					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-						<label for="description" class="col-sm-3 control-label">Role Description</label>
-						
-						<div class="col-sm-5">
-							@foreach ($permission as $key => $value)
-								<input type="checkbox" name="permission[]" value="{{$value->id}}">{{$value->name}}<br>
-							@endforeach
-
-							@if ($errors->has('permission'))
-								<span class="help-block">
-									<strong>{{ $errors->first('permission') }}</strong>
-								</span>
-							@endif
 						</div>
 					</div>
 					
